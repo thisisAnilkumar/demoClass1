@@ -1,0 +1,19 @@
+<p>Welcome to My Angular "{{title}}"</p>
+<!-- <app-hello></app-hello>
+<app-another-hello></app-another-hello> -->
+
+<!-- enable communication from component class to template-->
+<p>{{title}}</p>
+<p [innerHTML]="title"></p>
+
+<div>
+    <input type="text" placeholder="Enter Title Name" (keyup)="inputChanged($event)" />
+</div>
+
+<div>
+    <input type="text" placeholder="Name" [(ngModel)]="name" /> {{name}}
+</div>
+
+<hr/>
+<button (click)="counterChild()">Counter</button>
+<app-parent [childCount]="noOfChildren"></app-parent>

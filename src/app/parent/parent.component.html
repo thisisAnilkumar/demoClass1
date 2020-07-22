@@ -1,0 +1,25 @@
+ {{child1Name}}
+<p>i am parent upto here</p>
+
+<app-child1 [fname]="familyName" (childName)="getChild1Name($event)"></app-child1>
+
+<app-child2 [bname]="child1Name"></app-child2>
+
+<p *ngIf="childCount%2; else NoChild">
+    this is a p tag
+    <span>
+        this is span tag
+    </span>
+</p>
+<ng-template #NoChild>
+    <p>one child for this parent</p>
+</ng-template>
+{{childCount}}
+
+<hr/>
+
+<input type="text" #childName/>
+<button (click)="btnClicked(childName)">Submit</button>
+<p *ngFor="let child of childrenName">
+    <span>{{child.name}}</span>
+</p>
